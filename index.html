@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Study Planner</title>
+  <!-- Supabase & 紙吹雪ライブラリ -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <!-- CSSファイルの読み込み -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>📖 Weekly Study Planner</h1>
+      <p class="sub">今週の目標と計画を立てて進めよう！</p>
+    </header>
+
+    <!-- 今週の目標 -->
+    <div class="card goal-section">
+      <div class="section-title">今週のメイン目標</div>
+      <div class="goal-text" id="goalDisplay">読み込み中...</div>
+      <div class="edit-row">
+        <input type="text" id="goalInput" placeholder="新しい目標を入力">
+        <button onclick="updateGoal()">目標を更新</button>
+      </div>
+    </div>
+
+    <!-- 進捗バー -->
+    <div class="card">
+      <div class="progress-header">
+        <span>計画の達成率</span>
+        <span id="progressText">0% (0/0)</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+    </div>
+
+    <!-- 計画 / ToDoリスト -->
+    <div class="card">
+      <div class="section-title">目標達成のためのToDoリスト</div>
+      
+      <!-- 位置が動かない固定入力欄 -->
+      <div class="edit-row task-input-row">
+        <input type="text" id="taskInput" placeholder="計画・タスクを入力して追加">
+        <button onclick="addTask()">追加</button>
+      </div>
+
+      <!-- 入力欄の下に追加されていくスクロール可能リスト -->
+      <div class="task-list" id="taskList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
