@@ -12,10 +12,29 @@
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>📖 Weekly Study Planner</h1>
-      <p class="sub">今週の目標と計画を立てて進めよう！</p>
+  <!-- 1. 未ログイン時に表示するエリア -->
+  <div id="authSection" class="container" style="text-align: center; margin-top: 50px;">
+    <h1>📖 Weekly Study Planner</h1>
+    <p class="sub">ログインして自分専用の学習計画を立てましょう！</p>
+    <div class="card" style="margin-top: 20px; padding: 30px;">
+      <button onclick="loginWithGoogle()" style="padding: 12px 24px; font-size: 16px; cursor: pointer;">
+        Googleでログイン
+      </button>
+    </div>
+  </div>  
+
+  <!-- 2. ログイン中に表示するエリア（初期状態は隠す） -->
+  <div id="appSection" class="container" style="display: none;">
+    <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <div>
+        <h1>📖 Weekly Study Planner</h1>
+        <p class="sub">今週の目標と計画を立てて進めよう！</p>
+      </div>
+      <!-- ユーザー情報とログアウトボタン -->
+      <div style="text-align: right;">
+        <span id="userInfo" style="display: block; font-size: 14px; margin-bottom: 5px; color: #666;"></span>
+        <button onclick="logout()">ログアウト</button>
+      </div>
     </header>
 
     <!-- 今週の目標 -->
@@ -54,6 +73,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
