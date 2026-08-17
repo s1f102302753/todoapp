@@ -73,6 +73,16 @@
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <!-- 達成通知ポップアップ -->
+  <div id="rewardModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div id="rewardEmoji" class="modal-emoji">🎉</div>
+      <h2 id="rewardTitle">達成おめでとう！</h2>
+      <p id="rewardMessage">メッセージがここに入ります</p>
+      <button onclick="closeRewardModal()" class="modal-close-btn">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
